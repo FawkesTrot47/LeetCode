@@ -1,6 +1,21 @@
-#include "leetcode.cpp"
+/*
+    Compilation of all the main() functions per LeetCode problem
+*/
 
-int main() {
+/*
+Problem 1: twoSum
+int main_twoSum() {
+    leetcode A;
+    std::vector<int> B = {2,3,4,5,8};
+    int target = 9;
+    A.printRes(A.twoSum(B,target));
+    return 0;
+}
+*/ 
+
+/*
+Problem 2: addTwoNumbers
+int main_addTwo {
     leetcode A;
     ListNode* B = new ListNode(9);
     ListNode* C = new ListNode(9);
@@ -16,3 +31,4 @@ int main() {
     A.printRes(res);
     return 0;
 }
+*/
