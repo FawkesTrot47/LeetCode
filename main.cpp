@@ -2,17 +2,8 @@
 
 int main() {
     leetcode A;
-    ListNode* B = new ListNode(9);
-    ListNode* C = new ListNode(9);
-    B = B->addToListAtStart(B,9);
-    B = B->addToListAtStart(B,9);
-    B = B->addToListAtStart(B,9);
-    C = C->addToListAtStart(C,9);
-    C = C->addToListAtStart(C,9);
-    // A.printRes(B);
-    // A.printRes(C);
-    ListNode *res = nullptr;
-    res = A.addTwoNumbers(B,C);
-    A.printRes(res);
+    std::string S = "sususy";
+    int x = A.lengthOfLongestSubstring(S);
+    std::cout << std::endl << x;
     return 0;
 }

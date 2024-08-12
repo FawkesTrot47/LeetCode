@@ -73,7 +73,7 @@ ListNode* leetcode::addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode* l3 = nullptr;
     ListNode** head = &l3;
     int carryOver = 0, sum=0;
-    while (l1!=nullptr || l2!=nullptr) {
+    while (l1!=nullptr || l2!=nullptr || carryOver) {
         sum=0;
         if (l1!=nullptr) {
             sum+= l1->val;
@@ -88,10 +88,34 @@ ListNode* leetcode::addTwoNumbers(ListNode* l1, ListNode* l2) {
         *head = newNode;
         head = &newNode->next;
     }
-    if (carryOver!=0) {
-        ListNode* newNode = new ListNode(1);
-        *head = newNode;
-        head = &newNode->next;
-    }
     return l3;
+}
+
+/*
+LeetCode 3: Length of longest substring
+Given a string s, find the length of the longest substring without repeating characters.
+
+Example:
+Input: s = "abcabcbb"
+Output: 3
+Explanation: The answer is "abc", with the length of 3.
+
+Idea:   
+    Update a char-int map with position of char. If a repeat is found, update that as last repeated position.
+    Current index - last repeated position would be length of substring w/o repeat cha. Update for max.
+*/
+
+int leetcode::lengthOfLongestSubstring(std::string s) {
+    std::map<char,int> map1;
+    int index=0, subsLenMax = 0, lastRepeatIndex = -1;
+    for (auto c : s) {
+        if (map1.find(c)!=map1.end() && lastRepeatIndex < map1.at(c)) {
+            lastRepeatIndex = map1.at(c);
+        }
+        if (index - lastRepeatIndex > subsLenMax) {
+            subsLenMax = index - lastRepeatIndex;
+        }
+        map1[c] = index++;
+    }
+    return subsLenMax;
 }

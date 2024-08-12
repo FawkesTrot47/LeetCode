@@ -32,3 +32,14 @@ int main_addTwo {
     return 0;
 }
 */
+
+/*
+Problem 3: lengthOfLongestSubstring
+int main_lenSubs() {
+    leetcode A;
+    std::string S = "sususy";
+    int x = A.lengthOfLongestSubstring(S);
+    std::cout << std::endl << x;
+    return 0;
+}
+*/
