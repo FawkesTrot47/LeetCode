@@ -106,18 +106,19 @@ Idea:
 */
 
 int leetcode::lengthOfLongestSubstring(std::string s) {
-    std::map<char,int> map1;
-    int index=0, subsLenMax = 0, lastRepeatIndex = -1;
-    for (auto c : s) {
-        if (map1.find(c)!=map1.end() && lastRepeatIndex < map1.at(c)) {
-            lastRepeatIndex = map1.at(c);
+    if (!s.length() || s.length()==1) return s.length();
+    int sublength=0, l=0;
+    std::unordered_map <char, int> strmap;
+    strmap[s[0]]=0;
+    for (auto i = 1; i<s.length(); i++) {
+        auto it = strmap.find(s[i]);
+        if (it!=strmap.end() && it->second >= l) {
+            l = it->second + 1;
         }
-        if (index - lastRepeatIndex > subsLenMax) {
-            subsLenMax = index - lastRepeatIndex;
-        }
-        map1[c] = index++;
+        strmap[s[i]]=i;
+        sublength = std::max(sublength,i-l+1);
     }
-    return subsLenMax;
+    return sublength;
 }
 
 /* 

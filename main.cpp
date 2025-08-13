@@ -2,14 +2,12 @@
 
 int main() {
     leetcode A;
-    // std::vector<char> s = {'h','e','l','l','o'};
-    // std::vector<char> s = {'h','e','l','l','o',' ','w','o','r','l','d'};
-    std::vector<char> s = {'H','a','n','n','a'};
-    // std::vector<char> s = {'a','b','c','d','e','f','g','h','i','j'};
-    // std::vector<char> s = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-    A.reverseString(s);
-    for (char c : s) {
-        std::cout << c;
-    }
+    // std::string S = "sususy";
+    // std::string S = "abcabcbb"; // Expected output: 3
+    // std::string S = "bbbbb"; // Expected output: 1
+    // std::string S = "pwwkew"; // Expected output: 3
+    std::string S = "dvdf"; // Expected output: 3
+    int x = A.lengthOfLongestSubstring(S);
+    std::cout << std::endl << x;
     return 0;
 }
