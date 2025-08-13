@@ -74,6 +74,21 @@ int main_maxProfit() {
 */
 
 /*
+Problem 283: moveZeroes
+int main_moveZeroes() {
+    leetcode A;
+    // std::vector<int> nums = {0,1,0,3,12};
+    // std::vector<int> nums = {0,0,1};
+    // std::vector<int> nums = {1,0,0,0,3,12};
+    std::vector<int> nums = {0,1,0,3,12,0,0,0,0,0,11};
+    A.moveZeroes(nums);
+    A.printRes(nums);
+    return 0;
+}
+*/
+
+/*
+Problem 344: reverseString
 int main_reverseString() {
     leetcode A;
     // std::vector<char> s = {'h','e','l','l','o'};

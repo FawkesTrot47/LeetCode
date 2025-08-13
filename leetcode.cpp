@@ -193,6 +193,32 @@ int leetcode::maxProfit(std::vector<int>& prices) {
 }
 
 /*
+LeetCode 283. Move Zeroes
+Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+Note that you must do this in-place without making a copy of the array.
+Example 1:
+Input: nums = [0,1,0,3,12]
+Output: [1,3,12,0,0]
+Example 2:
+Input: nums = [0]
+Output: [0]
+
+Idea:
+    Use two pointers: one for the current position and one for the next non-zero element.
+    When a non-zero element is found, swap it with the current position and move both pointers forward.
+*/
+
+void leetcode::moveZeroes(std::vector<int>& nums) {
+    int next_non_zero = 0;
+    for (int i=0; i<nums.size(); i++) {
+        if (nums[i] != 0) {
+            std::swap(nums[next_non_zero], nums[i]);
+            next_non_zero++;
+        }
+    }
+}
+
+/*
 LeetCode 344. Reverse String
 Write a function that reverses a string. The input string is given as an array of characters.
 You must do this by modifying the input array in-place with O(1) extra memory.

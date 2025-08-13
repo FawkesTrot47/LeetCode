@@ -2,12 +2,11 @@
 
 int main() {
     leetcode A;
-    // std::string S = "sususy";
-    // std::string S = "abcabcbb"; // Expected output: 3
-    // std::string S = "bbbbb"; // Expected output: 1
-    // std::string S = "pwwkew"; // Expected output: 3
-    std::string S = "dvdf"; // Expected output: 3
-    int x = A.lengthOfLongestSubstring(S);
-    std::cout << std::endl << x;
+    // std::vector<int> nums = {0,1,0,3,12};
+    // std::vector<int> nums = {0,0,1};
+    // std::vector<int> nums = {1,0,0,0,3,12};
+    std::vector<int> nums = {0,1,0,3,12,0,0,0,0,0,11};
+    A.moveZeroes(nums);
+    A.printRes(nums);
     return 0;
 }
