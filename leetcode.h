@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <string>
 
 struct ListNode {
     int val;
@@ -40,6 +41,7 @@ public:
     std::vector<int> twoSum(std::vector<int>& nums, int target);
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
     int lengthOfLongestSubstring(std::string s);
+    std::string longestCommonPrefix(std::vector<std::string>& strs);
     
 
 private:

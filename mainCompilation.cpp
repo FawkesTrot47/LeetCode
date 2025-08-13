@@ -43,3 +43,14 @@ int main_lenSubs() {
     return 0;
 }
 */
+
+/*
+Problem 14: longestCommonPrefix
+int main_longestCommonPrefix() {
+    leetcode A;
+    std::vector<std::string> strs = {"flower","flow","flight"};
+    std::string res = A.longestCommonPrefix(strs);
+    std::cout << res;
+    return 0;
+}
+*/

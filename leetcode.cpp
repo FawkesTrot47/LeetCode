@@ -119,3 +119,42 @@ int leetcode::lengthOfLongestSubstring(std::string s) {
     }
     return subsLenMax;
 }
+
+/* 
+LeetCode 14. Longest Common Prefix
+Write a function to find the longest common prefix string amongst an array of strings.
+If there is no common prefix, return an empty string "". 
+
+Example 1:
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
+Example 2:
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+
+Idea:
+    Compare each string with the first string. If a mismatch is found, return the prefix till that point.
+    If no mismatch is found, return the first string.
+*/
+std::string leetcode::longestCommonPrefix(std::vector<std::string>& strs) {
+    if (strs.empty()) return "";
+    size_t min_len = strs[0].size();
+    for (size_t i= 1; i<strs.size(); i++) {
+        min_len = std::min(min_len, strs[i].size());
+    }
+    if (!min_len) {
+        return "";
+    }
+    std::string ch = "";
+    for (size_t i=0; i<min_len; i++) {
+        ch.push_back(strs[0][i]);
+        for (size_t j=1; j<strs.size(); j++) {
+            if (ch.back()!=strs[j][i]) {
+                ch.pop_back();
+                return ch;
+            }
+        }
+    }
+    return ch;
+}
