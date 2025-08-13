@@ -190,3 +190,25 @@ int leetcode::maxProfit(std::vector<int>& prices) {
     }
     return max_profit;
 }
+
+/*
+LeetCode 344. Reverse String
+Write a function that reverses a string. The input string is given as an array of characters.
+You must do this by modifying the input array in-place with O(1) extra memory.
+Example 1:
+Input: s = ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
+Example 2:
+Input: s = ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
+
+Idea:
+    Use two pointers, one at the start and one at the end of the string.
+    Swap characters at these pointers and move them towards the center until they meet.
+*/
+
+void leetcode::reverseString(std::vector<char>& s) {
+    for (size_t l=0, r=s.size()-1; l<r; l++,r--) {
+        std::swap(s[l],s[r]);
+    }
+}

@@ -2,11 +2,14 @@
 
 int main() {
     leetcode A;
-    // std::vector<int> prices = {7,1,5,3,6,4};
-    // std::vector<int> prices = {7,6,4,3,1}; // No profit
-    // std::vector<int> prices = {2,1}; // No profit
-    std::vector<int> prices = {1,2,3,4,5}; // Max profit is 4
-    int res = A.maxProfit(prices);
-    std::cout << res;
+    // std::vector<char> s = {'h','e','l','l','o'};
+    // std::vector<char> s = {'h','e','l','l','o',' ','w','o','r','l','d'};
+    std::vector<char> s = {'H','a','n','n','a'};
+    // std::vector<char> s = {'a','b','c','d','e','f','g','h','i','j'};
+    // std::vector<char> s = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+    A.reverseString(s);
+    for (char c : s) {
+        std::cout << c;
+    }
     return 0;
 }
