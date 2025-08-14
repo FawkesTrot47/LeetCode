@@ -239,3 +239,39 @@ void leetcode::reverseString(std::vector<char>& s) {
         std::swap(s[l],s[r]);
     }
 }
+
+/*
+LeetCode 424. Longest Repeating Character Replacement
+You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.
+Return the length of the longest substring containing the same letter you can get after performing the above operations.
+
+Example 1:
+Input: s = "ABAB", k = 2
+Output: 4
+Explanation: Replace the two 'A's with two 'B's or vice versa.
+Example 2:
+Input: s = "AABABBA", k = 1
+Output: 4
+Explanation: Replace the one 'A' in the middle with 'B' and form "AABBBBA".
+The substring "BBBB" has the longest repeating letters, which is 4.
+There may exists other ways to achieve this answer too.
+
+Idea:
+    Use a sliding window approach with two pointers. Maintain a count of the maximum frequency of any character in the current window.
+    If the size of the window minus the maximum frequency exceeds k, move the left pointer to reduce the window size.
+    Update the maximum length of the substring found so far.
+*/
+int leetcode::characterReplacement(std::string s, int k) {        
+    if (s.empty()) return 0;
+    std::unordered_map <char,int> map1;
+    int l=0, best=0, maxFreq=0;
+    for (int i=0; i<s.size(); i++) {
+        maxFreq = std::max(maxFreq,++map1[s[i]]);
+        while(i-l+1 > maxFreq+k) {
+            --map1[s[l]];
+            l++;
+        }
+        best = std::max(best,i-l+1);
+    }
+    return best;
+}

@@ -45,6 +45,7 @@ public:
     int maxProfit(std::vector<int>& prices);
     void moveZeroes(std::vector<int>& nums);
     void reverseString(std::vector<char>& s);
+    int characterReplacement(std::string s, int k);
     
 
 private:
