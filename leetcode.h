@@ -42,6 +42,7 @@ public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
     int lengthOfLongestSubstring(std::string s);
     std::string longestCommonPrefix(std::vector<std::string>& strs);
+    std::vector<std::vector<int>> threeSum(std::vector<int>& nums);
     int maxProfit(std::vector<int>& prices);
     std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);
     void moveZeroes(std::vector<int>& nums);

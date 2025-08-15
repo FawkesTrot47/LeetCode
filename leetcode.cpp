@@ -162,6 +162,63 @@ std::string leetcode::longestCommonPrefix(std::vector<std::string>& strs) {
 }
 
 /*
+Leetcode 15: 3Sum
+Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
+Notice that the solution set must not contain duplicate triplets.
+
+Example 1:
+Input: nums = [-1,0,1,2,-1,-4]
+Output: [[-1,-1,2],[-1,0,1]]
+Explanation: 
+nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0.
+nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0.
+nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
+The distinct triplets are [-1,0,1] and [-1,-1,2].
+Notice that the order of the output and the order of the triplets does not matter.
+Example 2:
+Input: nums = [0,1,1]
+Output: []
+Explanation: The only possible triplet does not sum up to 0.
+Example 3:
+Input: nums = [0,0,0]
+Output: [[0,0,0]]
+Explanation: The only possible triplet sums up to 0.
+
+Idea:
+    Sort the array first. Then use a for loop to fix one element and use two pointers to find the other two elements.
+    If the sum is less than zero, move the left pointer to the right. If the sum is greater than zero, move the right pointer to the left.
+    If the sum is zero, add the triplet to the result and move both pointers inward.
+*/
+
+std::vector<std::vector<int>> leetcode::threeSum(std::vector<int>& nums) {
+    if (nums.size()<3) return {};
+    std::sort(nums.begin(), nums.end());
+    size_t l=1, r=nums.size()-1, start=0;
+    size_t n = nums.size();
+    int target = 0, sum = 0;
+    std::vector<std::vector<int>> v1;
+    while (start<n-2) {
+        target = nums[start];
+        if (start>0 && target==nums[start-1]) {start++;l=start+1;r=n-1;continue;}
+        while (l<r) {
+            sum = nums[l]+nums[r];
+            if (-target == sum) {
+                v1.push_back({nums[start],nums[l],nums[r]});
+                do {++l;} while(l<r && nums[l]==nums[l-1]);
+                do {--r;} while(l<r && nums[r]==nums[r+1]);
+            }
+            else if (-target > sum)
+                l++;
+            else r--;
+        }
+        start++;
+        l=start+1;
+        r=n-1;
+    }
+    return v1;
+}
+
+/*
 LeetCode 121. Best Time to Buy and Sell Stock
 You are given an array prices where prices[i] is the price of a given stock on the ith day.
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
