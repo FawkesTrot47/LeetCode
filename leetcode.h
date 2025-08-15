@@ -43,6 +43,7 @@ public:
     int lengthOfLongestSubstring(std::string s);
     std::string longestCommonPrefix(std::vector<std::string>& strs);
     int maxProfit(std::vector<int>& prices);
+    std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);
     void moveZeroes(std::vector<int>& nums);
     void reverseString(std::vector<char>& s);
     int characterReplacement(std::string s, int k);

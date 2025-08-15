@@ -2,12 +2,11 @@
 
 int main() {
     leetcode A;
-    // std::string s = "AABABBA"; // Expected output: 5
-    // std::string s = "ABAB"; // Expected output: 4
-    // std::string s = "AABBA"; // Expected output: 4
-    std::string s = "AABABBA"; // Expected output: 5
-    int k = 2; // Number of characters we can replace
-    int res = A.characterReplacement(s, k);
-    std::cout << res;
+    // std::vector<int> numbers = {2,3,4,5,8};
+    std::vector<int> numbers = {2,7,11,15};
+    // std::vector<int> numbers = {2,3,4};
+    // std::vector<int> numbers = {-1,0};
+    int target = 9;
+    A.printRes(A.twoSumSecond(numbers, target));
     return 0;
 }
