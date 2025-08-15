@@ -9,7 +9,8 @@ void leetcode::setAandB(int32_t A, int32_t B) {
     m_b = B;
 }
 
-void leetcode::printRes(std::vector<int> v1) {
+template <typename T>
+void leetcode::printRes(std::vector<T> v1) {
     std::cout <<"[ ";
     for (auto x : v1) {
         std::cout << x << " ";
@@ -216,6 +217,45 @@ std::vector<std::vector<int>> leetcode::threeSum(std::vector<int>& nums) {
         r=n-1;
     }
     return v1;
+}
+
+/*
+LeetCode 49: Group Anagrams
+Given an array of strings strs, group the anagrams together. You can return the answer in any order.
+Example 1:
+Input: strs = ["eat","tea","tan","ate","nat","bat"]
+Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
+Explanation:
+There is no string in strs that can be rearranged to form "bat".
+The strings "nat" and "tan" are anagrams as they can be rearranged to form each other.
+The strings "ate", "eat", and "tea" are anagrams as they can be rearranged to form each other.
+Example 2:
+Input: strs = [""]
+Output: [[""]]
+Example 3:
+Input: strs = ["a"]
+Output: [["a"]]
+
+Idea:
+    Use a map to store the sorted string as the key and the original strings as the values.
+    Iterate through each string, sort it, and add it to the map. Finally, return the values of the map.
+*/
+
+std::vector<std::vector<std::string>> leetcode::groupAnagrams(std::vector<std::string>& strs) {
+    std::vector<std::vector<std::string>> ret;
+    if (strs.empty()) return ret;
+    std::unordered_map <std::string, std::vector<std::string>> map1;
+    for (const auto &s : strs) {
+        std::string s1 = s;
+        std::sort(s1.begin(),s1.end());
+        map1[s1].push_back(s);
+    }
+    auto it = map1.begin();
+    while (it!=map1.end()) {
+        ret.push_back(std::move(it->second));
+        it++;
+    }
+    return ret;
 }
 
 /*

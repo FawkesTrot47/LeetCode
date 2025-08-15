@@ -34,7 +34,8 @@ public:
     ~leetcode() {}    
     void printAandB();
     void setAandB(int32_t A, int32_t B);
-    void printRes(std::vector<int> v1);
+    template <typename T>
+    void printRes(std::vector<T> v1);
     void printRes(ListNode* l);
 
     // Leetcode exercise in order
@@ -43,6 +44,7 @@ public:
     int lengthOfLongestSubstring(std::string s);
     std::string longestCommonPrefix(std::vector<std::string>& strs);
     std::vector<std::vector<int>> threeSum(std::vector<int>& nums);
+    std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);
     int maxProfit(std::vector<int>& prices);
     std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);
     void moveZeroes(std::vector<int>& nums);
