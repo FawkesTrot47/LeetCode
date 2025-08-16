@@ -42,6 +42,7 @@ public:
     std::vector<int> twoSum(std::vector<int>& nums, int target);
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
     int lengthOfLongestSubstring(std::string s);
+    std::string longestPalindrome(std::string s); std::pair<int,int> widen(std::string s, int l, int r);
     std::string longestCommonPrefix(std::vector<std::string>& strs);
     std::vector<std::vector<int>> threeSum(std::vector<int>& nums);
     std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);

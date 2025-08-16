@@ -2,14 +2,12 @@
 
 int main() {
     leetcode A;
-    // std::vector<std::string> strs = {"eat","tea","tan","ate","nat","bat"};
-    // std::vector<std::string> strs = {"",""};
-    // std::vector<std::string> strs = {"a"};
-    std::vector<std::string> strs = {"eat","tea","tan","ate","nat","bat","tab","tab"};
-    std::vector<std::vector<std::string>> res = A.groupAnagrams(strs);
-    for (const auto& group : res) {
-        A.printRes(group);
-        std::cout << std::endl;
-    }
+    // std::string S = "babad"; // Expected output: "bab" or "aba"
+    std::string S = "cbbd"; // Expected output: "bb"
+    // std::string S = "a"; // Expected output: "a"
+    // std::string S = "ac"; // Expected output: "a" or "c"
+    // std::string S = "racecar"; // Expected output: "racecar"
+    std::string res = A.longestPalindrome(S);
+    std::cout << res;
     return 0;
 }

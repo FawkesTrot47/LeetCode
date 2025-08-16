@@ -122,6 +122,54 @@ int leetcode::lengthOfLongestSubstring(std::string s) {
     return sublength;
 }
 
+/*
+Leetcode 5: Longest Palindromic Substring
+Given a string s, return the longest palindromic substring in s.
+Example 1:
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+Example 2:
+Input: s = "cbbd"
+Output: "bb"
+
+Idea:
+    Use a helper function to expand around the center of the palindrome. Check both odd and even length palindromes.
+    Update the longest palindrome found so far.
+*/
+
+std::string leetcode::longestPalindrome(std::string s) {
+    size_t n = s.size();
+    if (n<=1) return s;
+    int bstart = 0, blen = 1;
+    for (auto i=0; i<n; i++) {
+        std::pair <int,int> res = widen(s,i,i);
+        int ostart = res.first, olen = res.second;
+        if (olen>blen) {
+            blen = olen;
+            bstart = ostart;
+        }
+        if (i<n-1){
+            std::pair <int,int> res = widen(s,i,i+1);
+            int estart = res.first, elen = res.second;
+            if (elen>blen) {
+                blen = elen;
+                bstart = estart;
+            }
+        }
+    }
+    return s.substr(bstart, blen);
+}   
+
+std::pair<int,int> leetcode::widen(std::string s, int l, int r) {
+    while (l>=0 && r<s.size() && s[l]==s[r]) {
+        l--;
+        r++;
+    }
+    ++l; --r;
+    return {l,r-l+1};
+}
+
 /* 
 LeetCode 14. Longest Common Prefix
 Write a function to find the longest common prefix string amongst an array of strings.
