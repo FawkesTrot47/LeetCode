@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <unordered_set>
 #include <string>
 
 struct ListNode {
@@ -51,6 +52,7 @@ public:
     std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);
     void moveZeroes(std::vector<int>& nums);
     void reverseString(std::vector<char>& s);
+    bool containsDuplicate(std::vector<int>& nums);
     int characterReplacement(std::string s, int k);
     
 

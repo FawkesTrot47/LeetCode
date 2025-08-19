@@ -134,6 +134,10 @@ Example 2:
 Input: nums1 = [1,2], nums2 = [3,4]
 Output: 2.50000
 Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+Idea:
+    Use two pointers to traverse both arrays and find the median.
+    If the total number of elements is odd, return the middle element.
+    If it is even, return the average of the two middle elements.
 */
 
 double leetcode::findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2) {
@@ -402,7 +406,36 @@ std::vector<int> leetcode::twoSumSecond(std::vector<int>& numbers, int target) {
             l++;
     }
     return {};
+}
+
+/*
+Leetcode 217: Contains Duplicate
+Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+Example 1:
+Input: nums = [1,2,3,1]
+Output: true
+Explanation:
+The element 1 occurs at the indices 0 and 3.
+Example 2:
+Input: nums = [1,2,3,4]
+Output: false
+Explanation:
+All elements are distinct.
+Example 3:
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+Output: true
+Idea:
+    Use a set to keep track of the elements seen so far. If an element is already in the set, return true.
+    If the loop completes without finding any duplicates, return false.
+*/
+
+bool leetcode::containsDuplicate(std::vector<int>& nums) {
+    std::unordered_set<int> s1;
+    for (auto n : nums) {
+        if (!s1.insert(n).second) return true;
     }
+    return false;
+}
 
 /*
 LeetCode 283. Move Zeroes
