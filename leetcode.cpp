@@ -438,6 +438,25 @@ bool leetcode::containsDuplicate(std::vector<int>& nums) {
 }
 
 /*
+Leetcode 242: Valid Anagram
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+Example 1:
+Input: s = "anagram", t = "nagaram"
+Output: true
+Example 2:
+Input: s = "rat", t = "car"
+Output: false
+Idea: Sort both strings and compare them. If they are equal, return true; otherwise, return false.
+*/
+
+bool leetcode::isAnagram(std::string s, std::string t) {
+    if (s.size() != t.size()) return false;
+    std::sort(s.begin(), s.end());
+    std::sort(t.begin(), t.end());
+    return s == t;
+}
+
+/*
 LeetCode 283. Move Zeroes
 Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 Note that you must do this in-place without making a copy of the array.

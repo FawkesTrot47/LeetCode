@@ -185,6 +185,22 @@ int main_containsDuplicate() {
 */
 
 /*
+Problem 242: isAnagram
+int main_isAnagram() {
+    leetcode A;
+    // std::string s = "anagram";
+    // std::string t = "nagaram";
+    // std::string s = "rat";
+    // std::string t = "car";
+    std::string s = "listen";
+    std::string t = "silent";
+    bool res = A.isAnagram(s, t);
+    std::cout << (res ? "true" : "false") << std::endl;
+    return 0;
+}
+*/
+
+/*
 Problem 344: reverseString
 int main_reverseString() {
     leetcode A;

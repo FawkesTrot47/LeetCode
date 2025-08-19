@@ -50,6 +50,7 @@ public:
     std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);
     int maxProfit(std::vector<int>& prices);
     std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);
+    bool isAnagram(std::string s, std::string t);
     void moveZeroes(std::vector<int>& nums);
     void reverseString(std::vector<char>& s);
     bool containsDuplicate(std::vector<int>& nums);
