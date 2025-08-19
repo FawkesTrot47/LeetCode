@@ -123,6 +123,35 @@ int leetcode::lengthOfLongestSubstring(std::string s) {
 }
 
 /*
+Leetcode 4: Median of Two Sorted Arrays
+Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+The overall run time complexity should be O(log (m+n)).
+Example 1:
+Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+Example 2:
+Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+*/
+
+double leetcode::findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2) {
+    const size_t m=nums1.size(), n=nums2.size(), total = m+n, mid1 = (total-1)/2, mid2 = total/2;
+    if (!m && !n) return 0.0;
+    int i=0, j=0, k=0, lval=0, rval=0;
+    while (k<=mid2) {
+        int pick;
+        if (i<m && (j>=n || nums1[i] <= nums2[j])) pick = nums1[i++];
+        else pick = nums2[j++]; 
+        if (k==mid1) lval=pick;
+        if (k==mid2) rval=pick;
+        ++k;
+    }
+    return (total%2) ? static_cast<double>(rval) : static_cast<double>(lval)/2+static_cast<double>(rval)/2;
+}
+
+/*
 Leetcode 5: Longest Palindromic Substring
 Given a string s, return the longest palindromic substring in s.
 Example 1:

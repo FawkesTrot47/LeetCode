@@ -2,12 +2,13 @@
 
 int main() {
     leetcode A;
-    // std::string S = "babad"; // Expected output: "bab" or "aba"
-    std::string S = "cbbd"; // Expected output: "bb"
-    // std::string S = "a"; // Expected output: "a"
-    // std::string S = "ac"; // Expected output: "a" or "c"
-    // std::string S = "racecar"; // Expected output: "racecar"
-    std::string res = A.longestPalindrome(S);
+    // std::vector<int> nums1 = {1,3};
+    // std::vector<int> nums2 = {2};
+    // std::vector<int> nums1 = {1,2};
+    // std::vector<int> nums2 = {3,4};
+    std::vector<int> nums1 = {1,2,3,4,5};
+    std::vector<int> nums2 = {6,7,8,9,10};
+    double res = A.findMedianSortedArrays(nums1, nums2);
     std::cout << res;
     return 0;
 }
