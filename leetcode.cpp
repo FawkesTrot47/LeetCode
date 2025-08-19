@@ -505,6 +505,36 @@ void leetcode::reverseString(std::vector<char>& s) {
 }
 
 /*
+Problem 383: Ransom Note
+Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+Each letter in magazine can only be used once in ransomNote.
+Example 1:
+Input: ransomNote = "a", magazine = "b"
+Output: false
+Example 2:
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+Example 3:
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+Idea:
+    Use a map to count the frequency of each character in the magazine. Then, iterate through the ransom note and check if each character is available in the magazine.
+    If any character is not available or its count is insufficient, return false. Otherwise, return true.
+*/
+
+bool leetcode::canConstruct(std::string ransomNote, std::string magazine) {
+    std::unordered_map<char, int> charCount;
+    for (char c : magazine) {
+        charCount[c]++;
+    }
+    for (char c : ransomNote) {
+        if (charCount[c] == 0) return false;
+        charCount[c]--;
+    }
+    return true;
+}
+
+/*
 LeetCode 424. Longest Repeating Character Replacement
 You are given a string s and an integer k. You can choose any character of the string and change it to any other uppercase English character. You can perform this operation at most k times.
 Return the length of the longest substring containing the same letter you can get after performing the above operations.

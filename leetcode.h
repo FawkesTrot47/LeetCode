@@ -54,6 +54,7 @@ public:
     void moveZeroes(std::vector<int>& nums);
     void reverseString(std::vector<char>& s);
     bool containsDuplicate(std::vector<int>& nums);
+    bool canConstruct(std::string ransomNote, std::string magazine);
     int characterReplacement(std::string s, int k);
     
 
