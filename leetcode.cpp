@@ -505,6 +505,41 @@ void leetcode::reverseString(std::vector<char>& s) {
 }
 
 /*
+LeetCode 347. Top K Frequent Elements
+Given an integer array nums and an integer k, return the k most frequent elements. You may return the answer in any order.
+Example 1:
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+Example 2:
+Input: nums = [1], k = 1
+Output: [1]
+
+Idea:
+    Use a hash map to count the frequency of each element. Then, use a bucket sort approach to group elements by their frequency.
+    Finally, collect the top k frequent elements from the buckets.
+*/
+
+std::vector<int> leetcode::topKFrequent(std::vector<int>& nums, int k) {
+    std::unordered_map<int,int> freq;
+    for (int num : nums) {
+        freq[num]++;
+    }
+    int n = nums.size();
+    std::vector<std::vector<int>> buckets(n + 1);
+    for (auto& [num, count] : freq) {
+        buckets[count].push_back(num);
+    }
+    std::vector<int> result;
+    for (int i = n; i > 0 && result.size() < k; i--) {
+        for (int num : buckets[i]) {
+            result.push_back(num);
+            if (result.size() == k) return result;
+        }
+    }
+    return result;
+}
+
+/*
 Problem 383: Ransom Note
 Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
 Each letter in magazine can only be used once in ransomNote.
