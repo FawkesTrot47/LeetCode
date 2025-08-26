@@ -2,13 +2,9 @@
 
 int main() {
     leetcode A;
-    std::string s = "ADOBECODEBANC";
-    std::string t = "ABC";
-    // std::string s = "a";
-    // std::string t = "a";
-    // std::string s = "a";
-    // std::string t = "aa";
-    std::string res = A.minWindow(s, t);
+    uint32_t n = 43261596; // Expected output: 964176192
+    // uint32_t n = 4294967293; // Expected output: 3221225471
+    uint32_t res = A.reverseBits(n);
     std::cout << res;
     return 0;
 }

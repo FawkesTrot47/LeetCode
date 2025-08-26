@@ -464,6 +464,31 @@ std::vector<int> leetcode::twoSumSecond(std::vector<int>& numbers, int target) {
 }
 
 /*
+Leetcode 190: Reverse Bits
+Reverse bits of a given 32 bits unsigned integer.
+Example 1:
+Input: n = 00000010100101000001111010011100
+Output:    964176192 (00111001011110000010100101000000)
+Explanation: The input binary string 00000010100101000001111010011100 represents the unsigned integer 43261596, so return 964176192 which its binary representation is 00111001011110000010100101000000.
+Example 2:
+Input: n = 11111111111111111111111111111101
+Output:   3221225471 (10111111111111111111111111111111)
+Explanation: The input binary string 11111111111111111111111111111101 represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is 10111111111111111111111111111111.
+
+Idea:
+    Use bit manipulation to reverse the bits. Iterate through each bit of the input number, and set the corresponding bit in the result.
+*/
+
+uint32_t leetcode::reverseBits(uint32_t n) {
+    uint32_t rev = 0;
+    for (int i=0; i<32; i++) {
+        rev = (rev<<1) | (n & 1);
+        n = n>>1;
+    }
+    return rev;
+}
+
+/*
 Leetcode 191: Number of 1 Bits
 Given a positive integer n, write a function that returns the number of set bits in its binary representation (also known as the Hamming weight).
 

@@ -129,6 +129,22 @@ int main_groupAnagrams() {
 */
 
 /*
+Problem 76: minWindow
+int main_minWindow() {
+    leetcode A;
+    // std::string s = "ADOBECODEBANC";
+    // std::string t = "ABC";
+    // std::string s = "a";
+    // std::string t = "a";
+    std::string s = "a";
+    std::string t = "aa";
+    std::string res = A.minWindow(s, t);
+    std::cout << res;
+    return 0;
+}
+*/
+
+/*
 Problem 121: maxProfit
 int main_maxProfit() {
     leetcode A;
@@ -141,6 +157,18 @@ int main_maxProfit() {
     return 0;
 }   
 */
+
+/*
+Problem 190: Reverse Bits
+int main_reverseBits() {
+    leetcode A;
+    uint32_t n = 43261596; // Expected output: 964176192
+    // uint32_t n = 4294967293; // Expected output: 3221225471
+    uint32_t res = A.reverseBits(n);
+    std::cout << res;
+    return 0;
+}
+*ß/
 
 /*
 Problem 191: hammingWeight
