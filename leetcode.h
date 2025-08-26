@@ -40,23 +40,24 @@ public:
     void printRes(ListNode* l);
 
     // Leetcode exercise in order
-    std::vector<int> twoSum(std::vector<int>& nums, int target);
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
-    int lengthOfLongestSubstring(std::string s);
-    double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2);
-    std::string longestPalindrome(std::string s); std::pair<int,int> widen(std::string s, int l, int r);
-    std::string longestCommonPrefix(std::vector<std::string>& strs);
-    std::vector<std::vector<int>> threeSum(std::vector<int>& nums);
-    std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);
-    int maxProfit(std::vector<int>& prices);
-    std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);
-    bool isAnagram(std::string s, std::string t);
-    void moveZeroes(std::vector<int>& nums);
-    void reverseString(std::vector<char>& s);
-    bool containsDuplicate(std::vector<int>& nums);
-    std::vector<int> topKFrequent(std::vector<int>& nums, int k);
-    bool canConstruct(std::string ransomNote, std::string magazine);
-    int characterReplacement(std::string s, int k);
+    std::vector<int> twoSum(std::vector<int>& nums, int target);                                                                    // 1    
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);                                                                            // 2
+    int lengthOfLongestSubstring(std::string s);                                                                                    // 3
+    double findMedianSortedArrays(std::vector<int>& nums1, std::vector<int>& nums2);                                                // 4
+    std::string longestPalindrome(std::string s); std::pair<int,int> widen(std::string s, int l, int r);                            // 5
+    std::string longestCommonPrefix(std::vector<std::string>& strs);                                                                // 14
+    std::vector<std::vector<int>> threeSum(std::vector<int>& nums);                                                                 // 15
+    std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);                                            // 49
+    int maxProfit(std::vector<int>& prices);                                                                                        // 121
+    std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);                                                           // 167
+    int hammingWeight(int n);                                                                                                       // 191
+    bool containsDuplicate(std::vector<int>& nums);                                                                                 // 217
+    bool isAnagram(std::string s, std::string t);                                                                                   // 242        
+    void moveZeroes(std::vector<int>& nums);                                                                                        // 283   
+    void reverseString(std::vector<char>& s);                                                                                       // 344
+    std::vector<int> topKFrequent(std::vector<int>& nums, int k);                                                                   // 347
+    bool canConstruct(std::string ransomNote, std::string magazine);                                                                // 383
+    int characterReplacement(std::string s, int k);                                                                                 // 424
     
 
 private:

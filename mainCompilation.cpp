@@ -143,6 +143,19 @@ int main_maxProfit() {
 */
 
 /*
+Problem 191: hammingWeight
+int main_hammingWeight() {
+    leetcode A;
+    int n = 11; // Expected output: 3
+    // int n = 128; // Expected output: 1
+    // int n = 2147483645; // Expected output: 30
+    int res = A.hammingWeight(n);
+    std::cout << res;
+    return 0;
+}
+*/
+
+/*
 Problem 283: moveZeroes
 int main_moveZeroes() {
     leetcode A;
