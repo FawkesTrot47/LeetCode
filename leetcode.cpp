@@ -426,6 +426,32 @@ int leetcode::maxProfit(std::vector<int>& prices) {
 }
 
 /*
+Problem 136: Single Number
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+Example 1:
+Input: nums = [2,2,1]
+Output: 1
+Example 2:
+Input: nums = [4,1,2,1,2]
+Output: 4
+Example 3:
+Input: nums = [1]
+Output: 1
+
+Idea:
+    Use XOR operation to find the single number. XOR of a number with itself is 0 and XOR of a number with 0 is the number itself.
+    Therefore, XORing all the numbers will cancel out the numbers that appear twice and leave the single number.
+*/
+
+int leetcode::singleNumber(std::vector<int>& nums) {
+    int res = 0;
+    for (auto n : nums) {
+    res ^= n;
+    } 
+    return res;
+}
+/*
 LeetCode 167. Two Sum II - Input Array Is Sorted
 Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
 Return the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2.

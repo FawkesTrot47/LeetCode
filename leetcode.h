@@ -50,6 +50,7 @@ public:
     std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);                                            // 49
     std::string minWindow(std::string s, std::string t);                                                                            // 76
     int maxProfit(std::vector<int>& prices);                                                                                        // 121
+    int singleNumber(std::vector<int>& nums);                                                                                       // 136
     std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);                                                           // 167
     uint32_t reverseBits(uint32_t n);                                                                                               // 190
     int hammingWeight(int n);                                                                                                       // 191

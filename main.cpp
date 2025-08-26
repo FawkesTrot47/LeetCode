@@ -2,10 +2,9 @@
 
 int main() {
     leetcode A;
-    // int n = 1; // Expected output: true
-    int n = 16; // Expected output: true
-    // int n = 3; // Expected output: false
-    bool res = A.isPowerOfTwo(n);
-    std::cout << (res ? "true" : "false") << std::endl;
+    // std::vector<int> nums = {4,1,2,1,2};
+    std::vector<int> nums = {2,2,1};
+    int res = A.singleNumber(nums);
+    std::cout << res;
     return 0;
 }
