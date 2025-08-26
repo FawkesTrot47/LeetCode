@@ -226,6 +226,19 @@ int main_containsDuplicate() {
 */
 
 /*
+Problem 231: isPowerOfTwo
+int main_isPowerOfTwo() {
+    leetcode A;
+    // int n = 1; // Expected output: true
+    int n = 16; // Expected output: true
+    // int n = 3; // Expected output: false
+    bool res = A.isPowerOfTwo(n);
+    std::cout << (res ? "true" : "false") << std::endl;
+    return 0;
+}
+*/
+
+/*
 Problem 242: isAnagram
 int main_isAnagram() {
     leetcode A;

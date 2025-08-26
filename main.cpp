@@ -2,9 +2,10 @@
 
 int main() {
     leetcode A;
-    uint32_t n = 43261596; // Expected output: 964176192
-    // uint32_t n = 4294967293; // Expected output: 3221225471
-    uint32_t res = A.reverseBits(n);
-    std::cout << res;
+    // int n = 1; // Expected output: true
+    int n = 16; // Expected output: true
+    // int n = 3; // Expected output: false
+    bool res = A.isPowerOfTwo(n);
+    std::cout << (res ? "true" : "false") << std::endl;
     return 0;
 }
