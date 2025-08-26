@@ -340,6 +340,61 @@ std::vector<std::vector<std::string>> leetcode::groupAnagrams(std::vector<std::s
 }
 
 /*
+LeetCode 76: Minimum Window Substring
+Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
+The testcases will be generated such that the answer is unique.
+
+Example 1:
+Input: s = "ADOBECODEBANC", t = "ABC"
+Output: "BANC"
+Explanation: The minimum window substring "BANC" includes 'A', 'B', and 'C' from string t.
+Example 2:
+Input: s = "a", t = "a"
+Output: "a"
+Explanation: The entire string s is the minimum window.
+Example 3:
+Input: s = "a", t = "aa"
+Output: ""
+Explanation: Both 'a's from t must be included in the window.
+Since the largest window of s only has one 'a', return empty string.
+
+Idea:
+    Use two pointers to represent the window. Expand the right pointer to include more characters until all characters in t are included.
+    Then, contract the left pointer to find the minimum window. Update the minimum window found so far.
+    Use two maps to keep track of the character counts in t and the current window.
+*/
+
+std::string leetcode::minWindow(std::string s, std::string t) {
+    const size_t m=s.size(), n=t.size();
+    if ((m < n) || !n) return "";
+    std::unordered_map <char, int> map1, map2;
+    for (auto i=0; i<n; i++) {
+        map1[t[i]]++;
+    }
+    int l=0, r=0, need=map1.size(), formed=0, blen=INT_MAX, bstart = 0;
+    while (r<m) {
+        auto c = s[r++];
+        map2[c]++;
+        auto it = map1.find(c);
+        if (it!=map1.end() && it->second==map2[c])
+            formed++;
+        while (formed==need) {
+            if (r-l<blen) {
+                blen = std::min(r-l,blen);
+                bstart = l;
+            }
+            auto c = s[l];
+            map2[c]--;
+            auto it = map1.find(c);
+            if (it!=map1.end() && map2[c]<it->second)
+                --formed;
+            ++l;
+        }
+    }
+    return (blen==INT_MAX) ? "" : s.substr(bstart,blen);
+}
+
+/*
 LeetCode 121. Best Time to Buy and Sell Stock
 You are given an array prices where prices[i] is the price of a given stock on the ith day.
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.

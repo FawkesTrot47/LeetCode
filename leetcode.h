@@ -48,6 +48,7 @@ public:
     std::string longestCommonPrefix(std::vector<std::string>& strs);                                                                // 14
     std::vector<std::vector<int>> threeSum(std::vector<int>& nums);                                                                 // 15
     std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);                                            // 49
+    std::string minWindow(std::string s, std::string t);                                                                            // 76
     int maxProfit(std::vector<int>& prices);                                                                                        // 121
     std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);                                                           // 167
     int hammingWeight(int n);                                                                                                       // 191
