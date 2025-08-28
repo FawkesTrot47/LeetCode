@@ -47,6 +47,7 @@ public:
     std::string longestPalindrome(std::string s); std::pair<int,int> widen(std::string s, int l, int r);                            // 5
     std::string longestCommonPrefix(std::vector<std::string>& strs);                                                                // 14
     std::vector<std::vector<int>> threeSum(std::vector<int>& nums);                                                                 // 15
+    bool isValidSudoku(std::vector<std::vector<char>>& board);                                                                      // 36
     std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);                                            // 49
     std::string minWindow(std::string s, std::string t);                                                                            // 76
     int maxProfit(std::vector<int>& prices);                                                                                        // 121
