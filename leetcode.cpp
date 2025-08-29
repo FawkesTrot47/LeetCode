@@ -858,3 +858,34 @@ int leetcode::characterReplacement(std::string s, int k) {
     }
     return best;
 }
+
+/*
+Leetcode 560. Subarray Sum Equals K
+Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
+A subarray is a contiguous non-empty sequence of elements within an array.  
+Example 1:
+Input: nums = [1,1,1], k = 2
+Output: 2
+Example 2:
+Input: nums = [1,2,3], k = 3
+Output: 2
+
+Idea:
+    Use a vector of size nums.size()+1 to store the cumulative sum of the array. For each cumulative sum, check if there is a previous cumulative sum that, when subtracted from the current sum, equals k.
+    If such a previous sum exists, it means there is a subarray that sums to k. Count the occurrences of such previous sums.
+*/
+
+int leetcode::subarraySum(std::vector<int>& nums, int k) {
+    int count = 0;
+    size_t n = nums.size();
+    std::vector<int> pref (n+1,0);
+    for (auto i=1; i<=n; i++) {
+        pref[i] = pref[i-1] + nums[i-1];
+    }
+    for (auto i=0; i<n; i++) {
+        for (auto j=i+1; j<=n; j++)
+            if (pref[j] - pref[i] == k)
+                count++;
+    }
+    return count;
+}

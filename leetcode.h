@@ -64,7 +64,7 @@ public:
     std::vector<int> topKFrequent(std::vector<int>& nums, int k);                                                                   // 347
     bool canConstruct(std::string ransomNote, std::string magazine);                                                                // 383
     int characterReplacement(std::string s, int k);                                                                                 // 424
-    
+    int subarraySum(std::vector<int>& nums, int k);                                                                                 // 560
 
 private:
     int32_t m_a;
