@@ -57,6 +57,7 @@ public:
     int hammingWeight(int n);                                                                                                       // 191
     bool containsDuplicate(std::vector<int>& nums);                                                                                 // 217
     bool isPowerOfTwo(int n);                                                                                                       // 231
+    std::vector<int> productExceptSelf(std::vector<int>& nums);                                                                     // 238
     bool isAnagram(std::string s, std::string t);                                                                                   // 242        
     void moveZeroes(std::vector<int>& nums);                                                                                        // 283   
     void reverseString(std::vector<char>& s);                                                                                       // 344

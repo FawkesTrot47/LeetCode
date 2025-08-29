@@ -659,6 +659,39 @@ bool leetcode::isPowerOfTwo(int n) {
 }
 
 /*
+Leetcode 238: Product of Array Except Self
+Given an integer array nums, return an array answer such that answer[i] is equal to the product of all the elements of nums except nums[i].
+The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
+You must write an algorithm that runs in O(n) time and without using the division operation.
+Example 1:
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+Example 2:
+Input: nums = [-1,1,0,-3,3]
+Output: [0,0,9,0,0] 
+
+Idea:
+    Use two passes to calculate the product of all elements to the left and right of each element.
+    In the first pass, calculate the product of all elements to the left of each element and store it in the result array.
+    In the second pass, calculate the product of all elements to the right of each element and multiply it with the corresponding element in the result array.
+*/
+
+std::vector<int> leetcode::productExceptSelf(std::vector<int>& nums) {
+    size_t n = nums.size();
+    std::vector <int> ret (n,1);
+    int left=1, right=1;
+    for(int i=0; i<n; i++) {
+        ret[i] = left;
+        left *=nums[i];
+    }
+    for (int i=n-1; i>=0; --i) {
+        ret[i] *= right;
+        right *= nums[i];
+    }
+    return ret;
+}
+
+/*
 Leetcode 242: Valid Anagram
 Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 Example 1:

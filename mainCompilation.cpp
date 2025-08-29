@@ -217,6 +217,18 @@ int main_hammingWeight() {
 */
 
 /*
+Problem 238: Product of Array Except Self
+int main_productExceptSelf() {
+    leetcode A;
+    // std::vector<int> nums = {1,2,3,4};
+    std::vector<int> nums = {-1,1,0,-3,3};
+    std::vector<int> res = A.productExceptSelf(nums);
+    A.printRes(res);
+    return 0;
+}
+*/
+
+/*
 Problem 283: moveZeroes
 int main_moveZeroes() {
     leetcode A;
