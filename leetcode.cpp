@@ -605,6 +605,51 @@ int leetcode::hammingWeight(int n) {
 }
 
 /*
+Leetcode 207: Course Schedule
+There are a total of numCourses courses you have to take, labeled from 0 to numCourses-1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
+For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.
+Return true if you can finish all courses. Otherwise, return false.
+Example 1:
+Input: numCourses = 2, prerequisites = [[1,0]]
+Output: true
+Explanation: There are a total of 2 courses to take. To take course 1 you should have finished course 0. So it is possible.
+Example 2:
+Input: numCourses = 2, prerequisites = [[1,0],[0,1]]
+Output: false
+Explanation: There are a total of 2 courses to take. To take course 1 you should have finished course 0, and to take course 0 you should also have finished course 1. So it is impossible.
+
+Idea: 
+    Use Kahn's algorithm for topological sorting. Create an adjacency list and an in-degree array.
+    Initialize a queue with all nodes having in-degree 0. Process each node, reducing the in-degree of its neighbors.
+    If a neighbor's in-degree becomes 0, add it to the queue. If all nodes are processed, return true; otherwise, return false.
+*/
+
+bool leetcode::canFinish(int numCourses, std::vector<std::vector<int>>& prerequisites) {
+    std::vector<std::vector<int>> prereq_course(numCourses);
+    std::vector<int> count1(numCourses, 0);
+    for (const auto& u : prerequisites) {
+        int course = u[0], prer = u[1];
+        if (course<0 || course >= numCourses || prer<0 || prer>=numCourses || course==prer) return false;
+        prereq_course[prer].push_back(course);
+        ++count1[course];
+    }
+    std::queue<int> q;
+    for (auto v=0; v<numCourses; v++) {
+        if (count1[v]==0) q.push(v);
+    }
+    int count2=0;
+    while (!q.empty()) {
+        int first = q.front();
+        q.pop();
+        ++count2;
+        for (auto v : prereq_course[first]) {
+            if (--count1[v]==0) q.push(v);
+        }
+    }
+    return (count2==numCourses);
+}
+
+/*
 Leetcode 217: Contains Duplicate
 Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
 Example 1:
