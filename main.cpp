@@ -2,10 +2,10 @@
 
 int main() {
     leetcode A;
-    // std::vector<int> prices = {7,1,5,3,6,4};
-    // std::vector<int> prices = {1,2,3,4,5}; // Max profit is 4
-    std::vector<int> prices = {7,6,4,3,1}; // No profit
-    int res = A.maxProfitII(prices);
-    std::cout << res;
+    // std::vector<int> nums = {2,3,1,1,4}; // Expected output: true
+    std::vector<int> nums = {3,2,1,0,4}; // Expected output: false
+    // std::vector<int> nums = {0}; // Expected output: true
+    bool res = A.canJump(nums);
+    std::cout << (res ? "true" : "false") << std::endl;
     return 0;
 }

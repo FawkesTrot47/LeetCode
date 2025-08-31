@@ -51,6 +51,7 @@ public:
     bool isValidSudoku(std::vector<std::vector<char>>& board);                                                                      // 36
     std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs);                                            // 49
     int maxSubArray(std::vector<int>& nums);                                                                                        // 53
+    bool canJump(std::vector<int>& nums);                                                                                           // 55
     std::vector<int> plusOne(std::vector<int>& digits);                                                                             // 66
     std::string minWindow(std::string s, std::string t);                                                                            // 76
     int maxProfit(std::vector<int>& prices);                                                                                        // 121

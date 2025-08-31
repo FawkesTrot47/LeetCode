@@ -428,6 +428,37 @@ int leetcode::maxSubArray(std::vector<int>& nums) {
 }
 
 /*
+Problem 55: Jump Game
+Given an array of non-negative integers nums, you are initially positioned at the first index of the array.
+Each element in the array represents your maximum jump length at that position.
+Determine if you are able to reach the last index.
+Example 1:
+Input: nums = [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+Example 2:
+Input: nums = [3,2,1,0,4]
+Output: false
+Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index. 
+
+Idea:
+    Keep track of the maximum index that can be reached at each step.
+    If at any point, the current index is greater than the maximum reachable index, return false.
+    If the maximum reachable index is greater than or equal to the last index, return true.
+*/
+
+bool leetcode::canJump(std::vector<int>& nums) {
+    size_t n = nums.size();
+    int maxReach = 0;
+    for (int i=0; i<n; i++) {
+        if (i > maxReach) return false;
+        maxReach = std::max(maxReach, i+nums[i]);
+        if (maxReach>=n-1) return true;
+    }    
+    return true;
+}
+
+/*
 Leetcode 66: Plus One
 You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-toright order. The large integer does not contain any leading 0's.
 Increment the large integer by one and return the resulting array of digits.
