@@ -400,6 +400,34 @@ std::vector<std::vector<std::string>> leetcode::groupAnagrams(std::vector<std::s
 }
 
 /*
+LeetCode 53: Maximum Subarray
+Given an integer array nums, find the contiguous subarray (containing at least one number) which has the largest sum and return its sum.
+Example 1:
+Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+Output: 6
+Explanation: The contiguous subarray [4,-1,2,1] has the largest sum 6.
+Example 2:
+Input: nums = [1]
+Output: 1
+Explanation: The contiguous subarray [1] has the largest sum 1.
+
+Idea:
+    Check for the max between the current best and the current sum + current number.
+    If the current sum + current number is less than the current number, reset the current sum to the current number.
+    This way, we are always keeping track of the maximum sum subarray ending at the current position.
+*/
+
+int leetcode::maxSubArray(std::vector<int>& nums) {
+    int l=0, curr=nums[0], currBest=curr;
+    for (auto r=1; r<nums.size(); r++) {
+        int n = nums[r];
+        curr = std::max(n, curr+n);
+        currBest = std::max(curr,currBest);
+    }
+    return currBest;
+}
+
+/*
 LeetCode 76: Minimum Window Substring
 Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
 The testcases will be generated such that the answer is unique.
