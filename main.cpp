@@ -2,10 +2,10 @@
 
 int main() {
     leetcode A;
-    // std::vector<int> nums = {-2,1,-3,4,-1,2,1,-5,4}; // Expected output: 6
-    // std::vector<int> nums = {1}; // Expected output: 1
-    std::vector<int> nums = {5,4,-1,7,8}; // Expected output: 23
-    int res = A.maxSubArray(nums);
-    std::cout << res;
+    // std::vector<int> nums = {3,0,1};
+    // std::vector<int> nums = {0,1};
+    std::vector<int> nums = {9,6,4,2,3,5,7,0,1};
+    int res = A.missingNumber(nums);
+    std::cout << res << std::endl;
     return 0;
 }
