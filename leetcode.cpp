@@ -962,6 +962,35 @@ int leetcode::characterReplacement(std::string s, int k) {
 }
 
 /*
+Leetcode 448: Find All Numbers Disappeared in an Array
+Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
+Example 1:
+Input: nums = [4,3,2,7,8,2,3,1]
+Output: [5,6]
+Example 2:
+Input: nums = [1,1]
+Output: [2]
+
+Idea: 
+    Count the frequency of each number in the array using a vector. Then, iterate through the vector to find the numbers that are missing (frequency is zero).
+*/
+
+std::vector<int> leetcode::findDisappearedNumbers(std::vector<int>& nums) {
+    const size_t n = nums.size();
+    std::vector<int> count (n+1,0);
+    std::vector<int> ret;
+    for (auto i=0; i<n; i++) {
+        ++count[nums[i]];
+    }
+    for (auto i=1; i<=n; i++) {
+        if (!count[i]) {
+            ret.push_back(i);
+        }
+    }
+    return ret;
+}
+
+/*
 Leetcode 560. Subarray Sum Equals K
 Given an array of integers nums and an integer k, return the total number of subarrays whose sum equals to k.
 A subarray is a contiguous non-empty sequence of elements within an array.  
