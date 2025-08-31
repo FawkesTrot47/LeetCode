@@ -428,6 +428,42 @@ int leetcode::maxSubArray(std::vector<int>& nums) {
 }
 
 /*
+Leetcode 66: Plus One
+You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-toright order. The large integer does not contain any leading 0's.
+Increment the large integer by one and return the resulting array of digits.
+Example 1:
+Input: digits = [1,2,3]
+Output: [1,2,4]
+Explanation: The array represents the integer 123.
+Incrementing by one gives 123 + 1 = 124.
+Thus, the result should be [1,2,4].
+Example 2:
+Input: digits = [4,3,2,1]
+Output: [4,3,2,2]
+Explanation: The array represents the integer 4321.
+Incrementing by one gives 4321 + 1 = 4322.
+Thus, the result should be [4,3,2,2].   
+
+Idea: 
+    Start from the last digit and add one. If the digit becomes 10, set it to 0 and carry over 1 to the next digit.
+    If there is a carry over after the first digit, insert 1 at the beginning of the array.
+*/
+
+std::vector<int> leetcode::plusOne(std::vector<int>& digits) {
+    const size_t n = digits.size();
+    int carry = 1;
+    for (int i=n-1; i>=0; i--) {
+        digits[i] += carry;
+        carry = digits[i] / 10;
+        digits[i] %=10;
+    }
+    if (carry) {
+        digits.insert(digits.begin(), carry);
+    }
+    return digits;
+}
+
+/*
 LeetCode 76: Minimum Window Substring
 Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
 The testcases will be generated such that the answer is unique.

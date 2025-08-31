@@ -2,10 +2,10 @@
 
 int main() {
     leetcode A;
-    // std::vector<int> nums = {4,3,2,7,8,2,3,1};
-    // std::vector<int> nums = {1,1};
-    std::vector<int> nums = {2,2};
-    std::vector<int> res = A.findDisappearedNumbers(nums);
+    // std::vector<int> digits = {1,2,3}; // Expected output: [1,2,4]
+    // std::vector<int> digits = {4,3,2,1}; // Expected output: [4,3,2,2]
+    std::vector<int> digits = {9,9,9}; // Expected output: [1,0,0,0]
+    std::vector<int> res = A.plusOne(digits);
     A.printRes(res);
     return 0;
 }
