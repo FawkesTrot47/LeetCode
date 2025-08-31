@@ -2,10 +2,10 @@
 
 int main() {
     leetcode A;
-    // std::vector<int> digits = {1,2,3}; // Expected output: [1,2,4]
-    // std::vector<int> digits = {4,3,2,1}; // Expected output: [4,3,2,2]
-    std::vector<int> digits = {9,9,9}; // Expected output: [1,0,0,0]
-    std::vector<int> res = A.plusOne(digits);
-    A.printRes(res);
+    // std::vector<int> prices = {7,1,5,3,6,4};
+    // std::vector<int> prices = {1,2,3,4,5}; // Max profit is 4
+    std::vector<int> prices = {7,6,4,3,1}; // No profit
+    int res = A.maxProfitII(prices);
+    std::cout << res;
     return 0;
 }
