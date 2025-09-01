@@ -457,6 +457,19 @@ int main_findDisappearedNumbers() {
 */
 
 /*
+Problem 442: findDuplicates
+int main_findDuplicates() {
+    leetcode A;
+    // std::vector<int> nums = {4,3,2,7,8,2,3,1};
+    // std::vector<int> nums = {1,1,2};
+    std::vector<int> nums = {1};
+    std::vector<int> res = A.findDuplicates(nums);
+    A.printRes(res);
+    return 0;
+}
+*/
+
+/*
 Problem 560: subarraySum
 int main_subarraySum() {
     leetcode A;

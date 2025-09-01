@@ -1065,6 +1065,33 @@ int leetcode::characterReplacement(std::string s, int k) {
 }
 
 /*
+Problem 442: Find All Duplicates in an Array
+Given an integer array nums of length n where all the integers of nums are in the range [1, n] and each integer appears once or twice, return an array of all the integers that appear twice.
+You must write an algorithm that runs in O(n) time and uses only constant extra space.
+Example 1:
+Input: nums = [4,3,2,7,8,2,3,1]
+Output: [2,3]
+Example 2:
+Input: nums = [1,1,2]
+Output: [1]
+Example 3:
+Input: nums = [1]
+Output: []  
+
+Idea:
+    sort and XOR each element with its index-1. The elements that appear twice will remain in the array.
+*/
+
+std::vector<int> leetcode::findDuplicates(std::vector<int>& nums) {
+    sort(nums.begin(), nums.end());
+    std::vector<int> ret;
+    for (int i=1; i<nums.size(); i++)
+        if ((nums[i]^nums[i-1]) == 0)
+            ret.push_back(nums[i]);
+    return ret;
+}
+
+/*
 Leetcode 448: Find All Numbers Disappeared in an Array
 Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
 Example 1:
