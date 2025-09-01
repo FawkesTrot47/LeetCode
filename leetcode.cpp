@@ -642,6 +642,43 @@ int leetcode::singleNumber(std::vector<int>& nums) {
     } 
     return res;
 }
+
+/*
+LeetCode 141: Linked List Cycle
+Given head, the head of a linked list, determine if the linked list has a cycle in it.
+There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the next pointer. Internally, pos is used to denote the index of the node that tail's next pointer is connected to. Note that pos is not passed as a parameter.
+Return true if there is a cycle in the linked list. Otherwise, return false.
+Example 1:
+Input: head = [3,2,0,-4], pos = 1
+Output: true
+Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+Example 2:
+Input: head = [1,2], pos = 0
+Output: true
+Explanation: There is a cycle in the linked list, where the tail connects to the 0th node.
+Example 3:
+Input: head = [1], pos = -1
+Output: false
+Explanation: There is no cycle in the linked list.
+
+Idea:
+    Use two pointers, one moving at normal speed and the other moving at double speed. If there is a cycle, the two pointers will eventually meet.
+    If the fast pointer reaches the end of the list, there is no cycle.
+*/
+
+bool leetcode::hasCycle(ListNode *head) {
+    ListNode *fast = head;
+    ListNode *slow = head;
+
+    while (fast && fast->next) {
+        fast = fast->next->next;
+        slow = slow->next;
+
+        if (fast==slow) return true;
+    }
+    return false;
+}
+
 /*
 LeetCode 167. Two Sum II - Input Array Is Sorted
 Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.

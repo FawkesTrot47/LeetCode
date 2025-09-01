@@ -2,10 +2,12 @@
 
 int main() {
     leetcode A;
-    // std::vector<int> nums = {1,3,4,2,2};
-    std::vector<int> nums = {3,1,3,4,2};
-    // std::vector<int> nums = {1,1};
-    int res = A.findDuplicate(nums);
-    std::cout << res << std::endl;
+    ListNode* head = new ListNode(3);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(0);
+    head->next->next->next = new ListNode(-4);
+    head->next->next->next->next = head->next; // Create a cycle
+    bool res = A.hasCycle(head);
+    std::cout << (res ? "true" : "false") << std::endl;
     return 0;
 }

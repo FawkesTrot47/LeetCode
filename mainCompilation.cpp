@@ -258,6 +258,21 @@ int main_twoSumSecond() {
 */
 
 /*
+Problem 141: Linked List Cycle
+int main_hasCycle() {
+    leetcode A;
+    ListNode* head = new ListNode(3);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(0);
+    head->next->next->next = new ListNode(-4);
+    head->next->next->next->next = head->next; // Create a cycle
+    bool res = A.hasCycle(head);
+    std::cout << (res ? "true" : "false") << std::endl;
+    return 0;
+}
+*/
+
+/*
 Problem 190: Reverse Bits
 int main_reverseBits() {
     leetcode A;
