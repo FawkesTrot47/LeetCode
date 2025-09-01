@@ -942,6 +942,38 @@ void leetcode::moveZeroes(std::vector<int>& nums) {
 }
 
 /*
+Problem 287: Find the Duplicate Number
+Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.
+There is only one repeated number in nums, return this repeated number.
+You must solve the problem without modifying the array nums and uses only constant extra space.
+Example 1:
+Input: nums = [1,3,4,2,2]
+Output: 2
+Example 2:
+Input: nums = [3,1,3,4,2]
+Output: 3
+Explanation: There is only one duplicate number in the array, return this number only.  
+
+Idea:
+    Use Floyd's Tortoise and Hare (Cycle Detection) algorithm. Treat the array as a linked list where the value at each index points to the next index.
+    Use two pointers, one moving twice as fast as the other. If there is a cycle, they will meet. Then, find the entrance to the cycle which is the duplicate number.
+*/
+
+int leetcode::findDuplicate(std::vector<int>& nums) {
+    int t=nums[0], h=nums[0];
+    do {
+        t = nums[t];
+        h = nums[nums[h]];
+    }  while(t!=h);
+    t = nums[0];
+    while (t!=h) {
+        t=nums[t];
+        h=nums[h];
+    }
+    return t;     
+}
+
+/*
 LeetCode 344. Reverse String
 Write a function that reverses a string. The input string is given as an array of characters.
 You must do this by modifying the input array in-place with O(1) extra memory.

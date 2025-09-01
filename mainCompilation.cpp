@@ -244,6 +244,20 @@ int main_singleNumber() {
 */
 
 /*
+Problem 167: twoSum
+int main_twoSumSecond() {
+    leetcode A;
+    // std::vector<int> numbers = {2,3,4,5,8};
+    std::vector<int> numbers = {2,7,11,15};
+    // std::vector<int> numbers = {2,3,4};
+    // std::vector<int> numbers = {-1,0};
+    int target = 9;
+    A.printRes(A.twoSumSecond(numbers, target));
+    return 0;
+}
+*/
+
+/*
 Problem 190: Reverse Bits
 int main_reverseBits() {
     leetcode A;
@@ -253,7 +267,7 @@ int main_reverseBits() {
     std::cout << res;
     return 0;
 }
-*ß/
+*/
 
 /*
 Problem 191: hammingWeight
@@ -264,46 +278,6 @@ int main_hammingWeight() {
     // int n = 2147483645; // Expected output: 30
     int res = A.hammingWeight(n);
     std::cout << res;
-    return 0;
-}
-*/
-
-/*
-Problem 238: Product of Array Except Self
-int main_productExceptSelf() {
-    leetcode A;
-    // std::vector<int> nums = {1,2,3,4};
-    std::vector<int> nums = {-1,1,0,-3,3};
-    std::vector<int> res = A.productExceptSelf(nums);
-    A.printRes(res);
-    return 0;
-}
-*/
-
-/*
-Problem 283: moveZeroes
-int main_moveZeroes() {
-    leetcode A;
-    // std::vector<int> nums = {0,1,0,3,12};
-    // std::vector<int> nums = {0,0,1};
-    // std::vector<int> nums = {1,0,0,0,3,12};
-    std::vector<int> nums = {0,1,0,3,12,0,0,0,0,0,11};
-    A.moveZeroes(nums);
-    A.printRes(nums);
-    return 0;
-}
-*/
-
-/*
-Problem 167: twoSum
-int main_twoSumSecond() {
-    leetcode A;
-    // std::vector<int> numbers = {2,3,4,5,8};
-    std::vector<int> numbers = {2,7,11,15};
-    // std::vector<int> numbers = {2,3,4};
-    // std::vector<int> numbers = {-1,0};
-    int target = 9;
-    A.printRes(A.twoSumSecond(numbers, target));
     return 0;
 }
 */
@@ -350,6 +324,18 @@ int main_isPowerOfTwo() {
 */
 
 /*
+Problem 238: Product of Array Except Self
+int main_productExceptSelf() {
+    leetcode A;
+    // std::vector<int> nums = {1,2,3,4};
+    std::vector<int> nums = {-1,1,0,-3,3};
+    std::vector<int> res = A.productExceptSelf(nums);
+    A.printRes(res);
+    return 0;
+}
+*/
+
+/*
 Problem 242: isAnagram
 int main_isAnagram() {
     leetcode A;
@@ -373,6 +359,33 @@ int main_missingNumber() {
     // std::vector<int> nums = {0,1};
     std::vector<int> nums = {9,6,4,2,3,5,7,0,1};
     int res = A.missingNumber(nums);
+    std::cout << res << std::endl;
+    return 0;
+}
+*/
+
+/*
+Problem 283: moveZeroes
+int main_moveZeroes() {
+    leetcode A;
+    // std::vector<int> nums = {0,1,0,3,12};
+    // std::vector<int> nums = {0,0,1};
+    // std::vector<int> nums = {1,0,0,0,3,12};
+    std::vector<int> nums = {0,1,0,3,12,0,0,0,0,0,11};
+    A.moveZeroes(nums);
+    A.printRes(nums);
+    return 0;
+}
+*/
+
+/*
+Problem 287: findDuplicate
+int main_findDuplicate() {
+    leetcode A;
+    // std::vector<int> nums = {1,3,4,2,2};
+    // std::vector<int> nums = {3,1,3,4,2};
+    std::vector<int> nums = {1,1};
+    int res = A.findDuplicate(nums);
     std::cout << res << std::endl;
     return 0;
 }
