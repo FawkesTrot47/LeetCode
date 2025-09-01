@@ -61,6 +61,7 @@ public:
     std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);                                                           // 167
     uint32_t reverseBits(uint32_t n);                                                                                               // 190
     int hammingWeight(int n);                                                                                                       // 191
+    ListNode* reverseList(ListNode* head);                                                                                          // 206
     bool canFinish(int numCourses, std::vector<std::vector<int>>& prerequisites);                                                   // 207
     bool containsDuplicate(std::vector<int>& nums);                                                                                 // 217
     bool isPowerOfTwo(int n);                                                                                                       // 231

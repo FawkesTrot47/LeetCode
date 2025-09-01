@@ -773,6 +773,36 @@ int leetcode::hammingWeight(int n) {
 }
 
 /*
+Problem 206: Reverse Linked List
+Given the head of a singly linked list, reverse the list, and return the reversed list.
+Example 1:
+Input: head = [1,2,3,4,5]
+Output: [5,4,3,2,1]
+Example 2:
+Input: head = [1,2]
+Output: [2,1]
+Example 3:
+Input: head = []
+Output: []
+
+Idea:
+    Use three pointers to reverse the linked list. Iterate through the list, reversing the next pointer of each node to point to the previous node.
+    Finally, return the new head of the reversed list.
+*/
+
+ListNode* leetcode::reverseList(ListNode* head) {      
+    ListNode prev(0);
+    while (head) {
+        ListNode* nxt = head->next;
+        head->next = prev.next;
+        prev.next = head;
+        head = nxt;
+    }
+    return prev.next;
+}
+
+
+/*
 Leetcode 207: Course Schedule
 There are a total of numCourses courses you have to take, labeled from 0 to numCourses-1. You are given an array prerequisites where prerequisites[i] = [ai, bi] indicates that you must take course bi first if you want to take course ai.
 For example, the pair [0, 1], indicates that to take course 0 you have to first take course 1.

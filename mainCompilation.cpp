@@ -244,20 +244,6 @@ int main_singleNumber() {
 */
 
 /*
-Problem 167: twoSum
-int main_twoSumSecond() {
-    leetcode A;
-    // std::vector<int> numbers = {2,3,4,5,8};
-    std::vector<int> numbers = {2,7,11,15};
-    // std::vector<int> numbers = {2,3,4};
-    // std::vector<int> numbers = {-1,0};
-    int target = 9;
-    A.printRes(A.twoSumSecond(numbers, target));
-    return 0;
-}
-*/
-
-/*
 Problem 141: Linked List Cycle
 int main_hasCycle() {
     leetcode A;
@@ -268,6 +254,20 @@ int main_hasCycle() {
     head->next->next->next->next = head->next; // Create a cycle
     bool res = A.hasCycle(head);
     std::cout << (res ? "true" : "false") << std::endl;
+    return 0;
+}
+*/
+
+/*
+Problem 167: twoSum
+int main_twoSumSecond() {
+    leetcode A;
+    // std::vector<int> numbers = {2,3,4,5,8};
+    std::vector<int> numbers = {2,7,11,15};
+    // std::vector<int> numbers = {2,3,4};
+    // std::vector<int> numbers = {-1,0};
+    int target = 9;
+    A.printRes(A.twoSumSecond(numbers, target));
     return 0;
 }
 */
@@ -295,6 +295,22 @@ int main_hammingWeight() {
     std::cout << res;
     return 0;
 }
+*/
+
+/*
+Problem 206: Reverse Linked List
+int main_reverseList() {
+    leetcode A;
+    ListNode* head = new ListNode(1);
+    head->next = new ListNode(2);
+    head->next->next = new ListNode(3);
+    head->next->next->next = new ListNode(4);
+    head->next->next->next->next = new ListNode(5);
+    ListNode* res = A.reverseList(head);
+    A.printRes(res);
+    return 0;
+}
+
 */
 
 /*

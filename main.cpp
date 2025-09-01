@@ -2,12 +2,12 @@
 
 int main() {
     leetcode A;
-    ListNode* head = new ListNode(3);
+    ListNode* head = new ListNode(1);
     head->next = new ListNode(2);
-    head->next->next = new ListNode(0);
-    head->next->next->next = new ListNode(-4);
-    head->next->next->next->next = head->next; // Create a cycle
-    bool res = A.hasCycle(head);
-    std::cout << (res ? "true" : "false") << std::endl;
+    head->next->next = new ListNode(3);
+    head->next->next->next = new ListNode(4);
+    head->next->next->next->next = new ListNode(5);
+    ListNode* res = A.reverseList(head);
+    A.printRes(res);
     return 0;
 }
