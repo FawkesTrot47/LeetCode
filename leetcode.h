@@ -54,6 +54,7 @@ public:
     bool canJump(std::vector<int>& nums);                                                                                           // 55
     std::vector<int> plusOne(std::vector<int>& digits);                                                                             // 66
     std::string minWindow(std::string s, std::string t);                                                                            // 76
+    ListNode* reverseBetween(ListNode* head, int left, int right);                                                                  // 92
     int maxProfit(std::vector<int>& prices);                                                                                        // 121
     int maxProfitII(std::vector<int>& prices);                                                                                      // 122
     int singleNumber(std::vector<int>& nums);                                                                                       // 136

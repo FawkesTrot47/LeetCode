@@ -551,6 +551,39 @@ std::string leetcode::minWindow(std::string s, std::string t) {
 }
 
 /*
+LeetCode 92: Reverse Linked List II
+Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
+Example 1:
+Input: head = [1,2,3,4,5], left = 2, right = 4
+Output: [1,4,3,2,5]
+Example 2:
+Input: head = [5], left = 1, right = 1
+Output: [5]
+*/
+
+ListNode* leetcode::reverseBetween(ListNode* head, int left, int right) {
+    ListNode dummy(0);
+    ListNode* current = &dummy;
+    current->next = head;
+    for (int i=1; i<left; i++) {
+        current = current->next;
+    }
+    ListNode* prev = nullptr;
+    ListNode* curr = current->next;
+    while (left<=right) {
+        ListNode* nxt = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = nxt;
+        left++;
+    }
+    ListNode* tail = current->next;
+    current->next = prev;
+    tail->next = curr;
+    return dummy.next;        
+}
+
+/*
 LeetCode 121. Best Time to Buy and Sell Stock
 You are given an array prices where prices[i] is the price of a given stock on the ith day.
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
