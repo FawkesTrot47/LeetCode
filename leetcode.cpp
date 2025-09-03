@@ -680,6 +680,24 @@ bool leetcode::hasCycle(ListNode *head) {
 }
 
 /*
+Leetcode 160: Intersection of Two Linked Lists
+Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null. 
+*/
+
+ListNode* leetcode::getIntersectionNode(ListNode *headA, ListNode *headB) {
+    std::unordered_set<ListNode*> s1;
+    while (headA) {
+        s1.insert(headA);
+        headA = headA->next;
+    }
+    while (headB) {
+        if (!s1.insert(headB).second) return headB;
+        headB = headB->next;
+    }
+    return nullptr;
+}
+
+/*
 LeetCode 167. Two Sum II - Input Array Is Sorted
 Given a 1-indexed array of integers numbers that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be numbers[index1] and numbers[index2] where 1 <= index1 < index2 <= numbers.length.
 Return the indices of the two numbers, index1 and index2, added by one as an integer array [index1, index2] of length 2.

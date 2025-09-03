@@ -58,6 +58,7 @@ public:
     int maxProfitII(std::vector<int>& prices);                                                                                      // 122
     int singleNumber(std::vector<int>& nums);                                                                                       // 136
     bool hasCycle(ListNode *head);                                                                                                  // 141
+    ListNode* getIntersectionNode(ListNode *headA, ListNode *headB);                                                                // 160
     std::vector<int> twoSumSecond(std::vector<int>& numbers, int target);                                                           // 167
     uint32_t reverseBits(uint32_t n);                                                                                               // 190
     int hammingWeight(int n);                                                                                                       // 191
