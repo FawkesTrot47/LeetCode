@@ -551,6 +551,34 @@ std::string leetcode::minWindow(std::string s, std::string t) {
 }
 
 /*
+LeetCode 83: Remove Duplicates from Sorted List
+Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.
+Example 1:
+Input: head = [1,1,2]
+Output: [1,2]
+Example 2:
+Input: head = [1,1,2,3,3]
+Output: [1,2,3]
+
+Idea: 
+    Traverse the linked list and compare the current node with the next node.
+    If they are the same, skip the next node. If they are different, move to the next node.
+*/
+
+ListNode* leetcode::deleteDuplicates(ListNode* head) {
+    ListNode* current = head;
+    while (current && current->next) {
+        if (current->val==current->next->val) {
+            current->next = current->next->next;
+        }
+        else {
+            current = current->next;
+        }
+    }
+    return head;
+}
+
+/*
 LeetCode 92: Reverse Linked List II
 Given the head of a singly linked list and two integers left and right where left <= right, reverse the nodes of the list from position left to position right, and return the reversed list.
 Example 1:
