@@ -824,6 +824,38 @@ int leetcode::hammingWeight(int n) {
 }
 
 /*
+Problem 203: Remove Linked List Elements
+Given the head of a linked list and an integer val, remove all the nodes of the linked list that has Node.val == val, and return the new head.
+Example 1:
+Input: head = [1,2,6,3,4,5,6], val = 6
+Output: [1,2,3,4,5]
+Example 2:
+Input: head = [], val = 1
+Output: []
+Example 3:
+Input: head = [7,7,7,7], val = 7
+Output: []
+
+Idea:
+    Use a dummy node to handle edge cases where the head needs to be removed. Iterate through the list, and if the current node's value is equal to val, skip it by adjusting the previous node's next pointer.
+    Finally, return the next pointer of the dummy node as the new head of the list.
+*/
+
+ListNode* leetcode::removeElements(ListNode* head, int val) {
+    ListNode dummy(0,head);
+    ListNode* curr = &dummy;
+    while (curr->next) {
+        if (curr->next->val == val) {
+            curr->next = curr->next->next;
+        }
+        else {
+            curr = curr->next;
+        }
+    }
+    return dummy.next;        
+}
+
+/*
 Problem 206: Reverse Linked List
 Given the head of a singly linked list, reverse the list, and return the reversed list.
 Example 1:
